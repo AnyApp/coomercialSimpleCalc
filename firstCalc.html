@@ -56,69 +56,72 @@
         </div>
         <div class="row">
             <div class="col-md-12 noPadding">
-                <input type="text" class="screen" />
+                <input type="text" class="screen" id="screenSimple"/>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 text-center greyBack backHeight">חישוב חדש</div>
-            <div class="col-md-2 text-center blueBack backHeight">מחק</div>
+            <div class="col-md-10 text-center greyBack backHeight" id="wipe">חישוב חדש</div>
+            <div class="col-md-2 text-center blueBack backHeight" id="del">מחק</div>
         </div>
         <div class="row">
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">7</span>
+                <span class="greyBack" id="7">7</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">8</span>
+                <span class="greyBack" id="8">8</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">9</span>
+                <span class="greyBack" id="9">9</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">/</span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">4</span>
-            </div>
-            <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">5</span>
-            </div>
-            <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">6</span>
-            </div>
-            <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">X</span>
+                <span class="greyBack" id="div">/</span>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">1</span>
+                <span class="greyBack" id="4">4</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">2</span>
+                <span class="greyBack" id="5">5</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">3</span>
+                <span class="greyBack" id="6">6</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">-</span>
+                <span class="greyBack"id="mult">X</span>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">.</span>
+                <span class="greyBack" id="1">1</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">0</span>
+                <span class="greyBack" id="2">2</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">=</span>
+                <span class="greyBack" id="3">3</span>
             </div>
             <div class="col-md-3 text-center backHeight">
-                <span class="greyBack">+</span>
+                <span class="greyBack" id="sub">-</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 text-center backHeight">
+                <span class="greyBack" id="dot">.</span>
+            </div>
+            <div class="col-md-3 text-center backHeight">
+                <span class="greyBack" id="0">0</span>
+            </div>
+            <div class="col-md-3 text-center backHeight">
+                <span class="greyBack" id="res">=</span>
+            </div>
+            <div class="col-md-3 text-center backHeight">
+                <span class="greyBack" id="plus">+</span>
             </div>
         </div>
     </div>
+	<script src="underscore-min.js"></script>
+	<script src="jquery.js"></script>
+	<script src="simpleCalc.js"></script>
 </body>
 </html>
