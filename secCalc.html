@@ -38,29 +38,29 @@
     <div class="row">
         <div class="col-md-12">
             <h2 class="smallTitle">הקש את הסכום שברצונך להצמיד</h2>
-            <input type="text" >
+            <input type="text" id="amount">
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <h2 class="smallTitle">תאריך ראשון</h2>
-            <input type="date" >
+            <input type="date" id="d1">
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <h2 class="smallTitle">תאריך שני</h2>
-            <input type="date" >
+            <input type="date" id="d2">
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-lg btn-success" href="#" style="margin: 10px 0; width: 60%;" role="button">חשב!</a>
+            <a class="btn btn-lg btn-success" style="margin: 10px 0; width: 60%;" role="button" id="calc">חשב!</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <input type="text" readonly>
+            <input type="text" readonly id="original">
         </div>
         <div class="col-md-6">
             <p>
@@ -70,7 +70,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <input type="text" readonly>
+            <input type="text" readonly id="after">
         </div>
         <div class="col-md-6">
             <p>
@@ -80,7 +80,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <input type="text" readonly>
+            <input type="text" readonly id="percent">
         </div>
         <div class="col-md-6">
             <p>
@@ -89,5 +89,29 @@
         </div>
     </div>
 </div>
+<script src="jquery.js">
+</script>
+<script>
+function findCpiValue(data,date){
+	for(var i in data){
+			if(Number(data[i].cpi_year) === date.getFullYear() && Number(data[i].cpi_month) === date.getMonth()){
+				return Number(data[i].cpi_value.split(',').join(''));
+			}
+		}
+	return Number(data[data.length-1].cpi_value.split(',').join(''));
+}
+$('#calc').click(function(){
+	$.get('http://codletech.net/commercial/API/getCpi.php',function(data){
+		data = JSON.parse(data);
+		var date1 = new Date($('#d1').val());
+		var date2 = new Date($('#d2').val());
+		var amount = Number($('#amount').val());
+		var newAmount = amount * findCpiValue(data,date2) / findCpiValue(data,date1);
+		$('#original').val(amount);
+		$('#after').val(newAmount);
+		$('#percent').val((newAmount-amount)/amount * 100);
+	});
+});
+</script>
 </body>
 </html>
