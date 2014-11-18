@@ -10,7 +10,7 @@ var CalcFactory = function(textBox){
         textBox.value = textBox.value.substring(0, textBox.value.length - 1);
     };
     newCalc.onType = function(){
-        if(!/^[0-9]|\+|\*|-|\/$/.test(textBox.value[textBox.value.length-1]))
+        if(!/^[0-9]|\+|\*|-|\/|\(|\)$/.test(textBox.value[textBox.value.length-1]))
             newCalc.remove();
     };
     /**
@@ -23,23 +23,7 @@ var CalcFactory = function(textBox){
      */
     newCalc.calculate = function(){
         var line  =  textBox.value;
-        var added = line.split('+');
-        var addedParsed = _.map(added,function(str){
-            var subtracted = str.split('-');
-            var subtractedParsed = _.map(subtracted,function(str){
-                var multiplied = str.split('*');
-                var multipliedParsed = _.map(multiplied,function(str){
-                    var divided = str.split('/');
-                    var dividedParsed = _.map(divided, function(devidee){return Number(devidee)});
-                    return _.reduce(dividedParsed,function(aggregated,num){return aggregated/num;},dividedParsed[0]*dividedParsed[0]);
-                });
-                return _.reduce(multipliedParsed,function(aggregated,num){return aggregated*num},1);
-            });
-            return _.reduce(subtractedParsed,function(aggregated,num){return aggregated-num},subtractedParsed[0]*2);
-        });
-        result = _.reduce(addedParsed,function(aggregated,num){return aggregated+num},0);
-		if (isNaN(result))
-			return textBox.value = 'Illegal';
+        var result = Shunt.parse(line);
 		textBox.value = result;		
     };
 	
