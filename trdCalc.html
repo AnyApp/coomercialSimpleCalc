@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+        body {
+            font-family: "Alef Hebrew", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+        .bitMargin {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-3">
+            <h1 class="text-center">NOI calc</h1>
+            <span>noi calc description</span>
+            <hr />
+            <div class="row bitMargin">
+                <div class="col-md-5">income</div>
+                <div class="col-md-5 col-md-offset-1">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="row bitMargin">
+                <div class="col-md-5">outcome</div>
+                <div class="col-md-5 col-md-offset-1">
+                    <input type="text">
+                </div>
+            </div>
+            <hr />
+            <div class="row bitMargin">
+                <div class="col-md-5">NOI</div>
+                <div class="col-md-5 col-md-offset-1">
+                    <input type="text" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h1 class="text-center">income calc</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Main income</h2>
+                    <div class="row toggledUp">
+                        <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span>income name:</span>
+                                <input type="text" style="width: 100%">
+                            </div>
+                        </div>
+                        <div class="row bitMargin">
+                            <div class="col-md-5">
+                                <span>amount:</span>
+                                <input type="text" style="width: 100%">
+                            </div>
+                            <div class="col-md-5 col-md-offset-2">
+                                <span>price:</span>
+                                <input type="text" style="width: 100%">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row bitMargin">
+                            <div class="col-md-6">
+                                <input type="radio" name="kind" /> Monthly
+                                <input type="radio" name="kind" /> Yearly
+                            </div>
+                        </div>
+                        <div class="row bitMargin">
+                            <div class="col-md-6">
+                                <h2 style="padding: 0;margin: 0;">Total:</h2>
+                            </div>
+                            <div class="col-md-6">
+                                <input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a>add more income</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Total income</h2>
+                    <hr />
+                    <input style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h1 class="text-center">Outcome calc</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Main outcome</h2>
+                    <div class="row toggledUp">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>outcome name:</span>
+                                    <input type="text" style="width: 100%">
+                                </div>
+                            </div>
+                            <div class="row bitMargin">
+                                <div class="col-md-5">
+                                    <span>amount:</span>
+                                    <input type="text" style="width: 100%">
+                                </div>
+                                <div class="col-md-5 col-md-offset-2">
+                                    <span>price:</span>
+                                    <input type="text" style="width: 100%">
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row bitMargin">
+                                <div class="col-md-6">
+                                    <input type="radio" name="kind" /> Monthly
+                                    <input type="radio" name="kind" /> Yearly
+                                </div>
+                            </div>
+                            <div class="row bitMargin">
+                                <div class="col-md-6">
+                                    <h2 style="padding: 0;margin: 0;">Total:</h2>
+                                </div>
+                                <div class="col-md-6">
+                                    <input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a>add more income</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Total outcome</h2>
+                    <hr />
+                    <input style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
