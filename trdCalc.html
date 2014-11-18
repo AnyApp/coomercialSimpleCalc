@@ -21,6 +21,10 @@
         input[type='text']{
             width: 100%;
         }
+		h2{
+			padding:0;
+			margin:0;
+		}
     </style>
 </head>
 <body>
@@ -32,30 +36,34 @@
             <div class="row bitMargin">
                 <div class="col-md-5">income</div>
                 <div class="col-md-5">
-                    <input type="text">
+                    <input type="text" id="result1">
                 </div>
             </div>
             <div class="row bitMargin">
                 <div class="col-md-5">outcome</div>
                 <div class="col-md-5 ">
-                    <input type="text">
+                    <input type="text" id="result2">
                 </div>
             </div>
             <hr />
             <div class="row bitMargin">
                 <div class="col-md-5">NOI</div>
                 <div class="col-md-5 ">
-                    <input type="text" readonly>
+                    <input type="text" readonly id="resultsGap">
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 incomes">
             <h1 class="text-center">income calc</h1>
-            <div class="row">
+            <div class="row income">
                 <div class="col-md-12">
-                    <h2>Main income</h2>
+					<div class="col-md-9">
+						<h2>Main income</h2>
+					</div>
+					<div class="col-md-3 total">
+					</div>
                     <div class="row toggledUp">
-                        <div class="col-md-12">
+                        <div class="col-md-12 foldable">
                         <div class="row">
                             <div class="col-md-12">
                                 <span>income name:</span>
@@ -84,7 +92,7 @@
                                 <span style="padding: 0;margin: 0;">Total:</span>
                             </div>
                             <div class="col-md-6">
-                                <input>
+                                <input class="totals">
                             </div>
                         </div>
                     </div>
@@ -94,24 +102,31 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <a>add more income</a>
+                    <a id="add1">add more income</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <h2>Total income</h2>
                     <hr />
-                    <input style="width: 100%;">
+                    <input style="width: 100%;" class="totalTotals">
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 outcomes">
             <h1 class="text-center">Outcome calc</h1>
-            <div class="row">
+            <div class="row outcome">
                 <div class="col-md-12">
-                    <h2>Main outcome</h2>
+					<div class="row">
+						<div class="col-md-9">
+							<h2>Main outcome</h2>
+						</div>
+						<div class="col-md-3 total">
+						</div>
+					</div>
+                    
                     <div class="row toggledUp">
-                        <div class="col-md-12">
+                        <div class="col-md-12 foldable">
                             <div class="row">
                                 <div class="col-md-12">
                                     <span>outcome name:</span>
@@ -140,7 +155,7 @@
                                     <span style="padding: 0;margin: 0;">Total:</span>
                                 </div>
                                 <div class="col-md-6">
-                                    <input>
+                                    <input class="totals">
                                 </div>
                             </div>
                         </div>
@@ -150,18 +165,21 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <a>add more income</a>
+                    <a id="add2">add more outcome</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <h2>Total outcome</h2>
                     <hr />
-                    <input style="width: 100%;">
+                    <input style="width: 100%;" class="totalTotals">
                 </div>
             </div>
         </div>
 
     </div>
+<script src="underscore-min.js"></script>
+<script src="jquery.js"></script>
+<script src="trdCalc.js"></script>
 </body>
 </html>
