@@ -3,10 +3,11 @@
 <head lang="en">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
     <script src="jquery-ui-slider-pips.js"></script>
+	<script src="underscore-min.js"></script>
     <link rel="stylesheet" href="jquery-ui-slider-pips.css">
     <meta charset="UTF-8">
     <title></title>
@@ -21,6 +22,7 @@
         }
     </style>
     <script>
+		var selected = 0;
         $(function(){
             console.log('ok');
             // first we need a slider to work with
@@ -29,7 +31,26 @@
             $("#slider10").slider({ min: 0, max: 3 });
             $("#slider10").slider("pips" , { rest: "label", labels: months })
             $("#slider10").on("slidechange", function(e,ui) {
+				selected = ui.value;
                 // $("#slider10output").text(  months[ui.value] );
+				var yield = Number($('#yield').val());
+				var noi = Number($('#noi').val());
+				if (isNaN(yield) || isNaN(noi))
+					return; //add an error message if one of the arguments are not numbers.
+				var sensitivity = Number(months[ui.value]);
+				var percentages = $('.sensitivity');
+				var percentagesArray = [];
+				for(var i in percentages){
+					percentagesArray.push(yield - sensitivity * (3 - i));
+					percentages[i].innerHTML = percentagesArray[i] + '%';
+				}
+				var prices = $('.resPrice');
+				for(var i in prices){
+					prices[i].innerHTML = noi * percentagesArray[i];
+				}
+				$('#miniNoi').html(noi);
+				$('#miniYield').html(yield);
+				$('#miniPrice').html(noi * percentagesArray[3]);
             });
         })
     </script>
@@ -46,29 +67,33 @@
             </p>
             <hr />
             <h3>NOI</h3>
-            <input style="width: 100%;">
+            <input style="width: 100%;" id="noi">
             <h3>
                 תשואה מבוקשת
             </h3>
-            <input style="width: 80%; margin: 0 auto; text-align: center;">
+            <input style="width: 80%; margin: 0 auto; text-align: center;" id="yield">
             <strong>%</strong>
             <hr />
             <h3>
                 מחיר מבוקש על ידי המוכר
             </h3>
-            <input style="width: 100%;">
-            <a>
+            <input style="width: 100%;" id="price">
+            <a id="calcSens">
                 חשב רגישות מחיר
             </a>
+			<div id="calcYield">חשב תשואה תשואה מבוקשת
+			</div>
+			<div id="calcPrice">חשב מחיר מבוקש על ידי המוכר
+			</div>
         </div>
         <div class="col-md-6 text-center">
             <h1>חישוב רגישות</h1>
-            <div class="row ">
+            <div class="row">
                 <div class="col-md-6">
                     NOI
                 </div>
                 <div class="col-md-6">
-                    <span>10000</span>
+                    <span id="miniNoi"></span>
                 </div>
             </div>
             <div class="row ">
@@ -76,7 +101,7 @@
                     תשואה מבוקשת
                 </div>
                 <div class="col-md-6">
-                    <span>5%</span>
+                    <span id="miniYield"></span>
                 </div>
             </div>
             <div class="row ">
@@ -84,7 +109,7 @@
                     מחיר
                 </div>
                 <div class="col-md-6">
-                    <span>50000</span>
+                    <span id="miniPrice"></span>
                 </div>
             </div>
             <div class="row">
@@ -98,38 +123,40 @@
                 <div class="col-md-12">
                     <table class="table table-bordered table-condensed">
                         <tr>
-                            <td>7</td>
-                            <td>105000</td>
+                            <td class="sensitivity">7</td>
+                            <td class="resPrice">105000</td>
                         </tr>
                         <tr>
-                            <td>8</td>
-                            <td>105000</td>
+                            <td class="sensitivity">8</td>
+                            <td class="resPrice">105000</td>
                         </tr>
                         <tr>
-                            <td>9</td>
-                            <td>105000</td>
+                            <td class="sensitivity">9</td>
+                            <td class="resPrice">105000</td>
                         </tr>
                         <tr class="active">
-                            <td>10</td>
-                            <td>105000</td>
+                            <td class="sensitivity">10</td>
+                            <td class="resPrice">105000</td>
                         </tr>
                         <tr>
-                            <td>11</td>
-                            <td>105000</td>
+                            <td class="sensitivity">11</td>
+                            <td class="resPrice">105000</td>
                         </tr>
                         <tr>
-                            <td>12</td>
-                            <td>105000</td>
+                            <td class="sensitivity">12</td>
+                            <td class="resPrice">105000</td>
                         </tr>
                         <tr>
-                            <td>13</td>
-                            <td>105000</td>
+                            <td class="sensitivity">13</td>
+                            <td class="resPrice">105000</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+<script src="4th.js"></script>
+
 </div>
 </body>
 </html>
