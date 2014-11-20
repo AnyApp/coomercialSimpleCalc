@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head dir="rtl">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>
+                    חישוב שכר דירה משרדים
+                </h2>
+                <hr />
+                <div class="row">
+                    <div class="col-md-2">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-10">
+                        משרדים מ"ר ברוטו
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>
+                            שטח
+                        </h5>
+                        <input type="text" style="width: 80%;" placeholder='מ"ר' />
+                    </div>
+                    <div class="col-md-3">
+                        <h5>
+מחיר
+                        </h5>
+                        <input type="text" style="width: 80%;" placeholder="שח"/>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>סך הכל</h5>
+                        <input style="width: 80%;" type="text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-10">
+                        הוסף מחסן
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-10">
+                        הוסף חניה
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-10">
+הוסף ניהול
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr />
+                        <h3 class="text-center">סך הכל חודשי</h3>
+                        <div class="row">
+                            <div class="col-lg-4 col-lg-offset-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" />
+                                </div><!-- /form-group -->
+                            </div><!-- /.col-lg-4 -->
+                        </div><!-- /.row -->
+                        <a>
+                            חשב לכל תקופת החוזה
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>תוצאה</h2>
+                <hr />
+                <span>
+                    סה"כ שכר דירה חודשי
+                </span>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control" />
+                        </div><!-- /form-group -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+                <span>
+                    אורך חוזה (חודשים)
+                </span>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="36" />
+                        </div><!-- /form-group -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+                <span>
+                    אורך תקופת אופציה (חודשים)
+                </span>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="36" />
+                        </div><!-- /form-group -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+                <span>
+                    מספר תקופות אופציה
+                </span>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="2" />
+                        </div><!-- /form-group -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>עללית שכד באופציה</span>
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="5" />
+                                </div><!-- /form-group -->
+                            </div><!-- /.col-lg-4 -->
+                        </div><!-- /.row -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                ש"ח
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                אחוז
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <span>
+                מדד
+                </span>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="3" />
+                        </div><!-- /form-group -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-block">חשב טבלה</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>
+טבלת עלויות שכירות
+                </h2>
+                <hr />
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>עלות חודשית</th>
+                        <th>עלות בשנה</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                שנה 1
+                            </td>
+                            <td>
+                                5000
+                            </td>
+                            <td>
+                                60000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                שנה 1
+                            </td>
+                            <td>
+                                5000
+                            </td>
+                            <td>
+                                60000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                שנה 1
+                            </td>
+                            <td>
+                                5000
+                            </td>
+                            <td>
+                                60000
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
