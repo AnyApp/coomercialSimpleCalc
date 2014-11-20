@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css" />
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
+<script src="jquery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -26,120 +26,185 @@
         </div>
     </div>
     <div class="row">
-        <strong>
+        <div><strong>
             קומת קרקע
-        </strong>
+        </strong></div>
         <div class="col-md-3">
             <span>שטח</span>
             <div class="form-group">
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control mr"/>
             </div>
         </div>
         <div class="col-md-4">
             <span>מחיר</span>
             <div class="form-group">
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control sh"/>
             </div>
         </div>
         <div class="col-md-5">
             <span>סה"כ</span>
             <div class="form-group">
-                <input type="text" class="form-control" readonly />
+                <input type="text" class="form-control sum"/>
             </div>
-        </div>
+        </div><div>
         <strong>
 תת קרקעי
-        </strong>
+        </strong></div>
         <div class="col-md-3">
             <span>שטח</span>
             <div class="form-group">
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control mr"/>
             </div>
         </div>
         <div class="col-md-4">
             <span>מחיר</span>
             <div class="form-group">
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control sh"/>
             </div>
         </div>
         <div class="col-md-5">
             <span>סה"כ</span>
             <div class="form-group">
-                <input type="text" class="form-control" readonly />
+                <input type="text" class="form-control sum"/>
             </div>
-        </div>
+        </div><div>
         <strong>
 גלריה
-        </strong>
+        </strong></div>
         <div class="col-md-3">
             <span>שטח</span>
             <div class="form-group">
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control mr"/>
             </div>
         </div>
         <div class="col-md-4">
             <span>מחיר</span>
             <div class="form-group">
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control sh"/>
             </div>
         </div>
         <div class="col-md-5">
             <span>סה"כ</span>
             <div class="form-group">
-                <input type="text" class="form-control" readonly />
+                <input type="text" class="form-control sum"/>
             </div>
-        </div>
+        </div><div>
         <strong>
 סה"כ הנכס
         </strong>
+		</div>
         <div class="col-md-3">
             <span>שטח</span>
             <div class="form-group">
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control sumMr"/>
             </div>
         </div>
         <div class="col-md-4">
-            <span>מחיר</span>
-            <div class="form-group">
-                <input type="text" class="form-control" />
-            </div>
         </div>
         <div class="col-md-5">
             <span>סה"כ</span>
             <div class="form-group">
-                <input type="text" class="form-control" readonly />
+                <input type="text" class="form-control sumSum"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-2">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="$('#hide1').css('display','');"></span>
             </div>
             <div class="col-md-10" style="font-weight: bold;">
 הוסף מחסן
             </div>
+			
         </div>
+		<div id="hide1" style="display:none;" >
+		<div class="col-md-3">
+            <span>שטח</span>
+            <div class="form-group">
+                <input type="text" class="form-control mr"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <span>מחיר</span>
+            <div class="form-group">
+                <input type="text" class="form-control sh"/>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <span>סה"כ</span>
+            <div class="form-group">
+                <input type="text" class="form-control sum"/>
+            </div>
+        </div></div>
         <div class="row">
             <div class="col-md-2">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="$('#hide2').css('display','');"></span>
             </div>
             <div class="col-md-10" style="font-weight: bold;">
 הוסף חניה
             </div>
         </div>
+		<div id="hide2" style="display:none;" >
+		<div class="col-md-3">
+            <span>שטח</span>
+            <div class="form-group">
+                <input type="text" class="form-control mr"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <span>מחיר</span>
+            <div class="form-group">
+                <input type="text" class="form-control sh"/>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <span>סה"כ</span>
+            <div class="form-group">
+                <input type="text" class="form-control sum"/>
+            </div>
+        </div></div>
         <div class="row">
             <div class="col-md-2">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="$('#hide3').css('display','');"></span>
             </div>
             <div class="col-md-10" style="font-weight: bold;">
 הוסף שילוט
             </div>
         </div>
+		<div id="hide3" style="display:none;" >
+		<div class="col-md-3">
+            <span>שטח</span>
+            <div class="form-group">
+                <input type="text" class="form-control mr"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <span>מחיר</span>
+            <div class="form-group">
+                <input type="text" class="form-control sh"/>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <span>סה"כ</span>
+            <div class="form-group">
+                <input type="text" class="form-control sum"/>
+            </div>
+        </div></div>
         <div class="row">
             <div class="col-md-2">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="$('#hide4').css('display','');"></span>
             </div>
             <div class="col-md-10" style="font-weight: bold;">
 הוסף ניהול
+            </div>
+			<div id="hide4" style="display:none;" >
+			<div class="form-group col-md-4"><div>
+                <input type="text" class="form-control manage"/>
+            </div></div></div>
+        </div>
+        <div class="col-md-5">
+            <span>סה"כ</span>
+            <div class="form-group">
+                <input type="text" class="form-control totalMonthly" readonly />
             </div>
         </div>
         <hr />
@@ -164,7 +229,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="form-group">
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control totalMonthly" />
             </div><!-- /form-group -->
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
@@ -174,7 +239,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="form-group">
-                <input type="text" class="form-control" value="36" />
+                <input type="text" class="form-control" value="36" id="len"/>
             </div><!-- /form-group -->
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
@@ -184,7 +249,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="form-group">
-                <input type="text" class="form-control" value="36" />
+                <input type="text" class="form-control" value="36" id="optionLen"/>
             </div><!-- /form-group -->
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
@@ -194,17 +259,17 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="2" />
+                <input type="text" class="form-control" placeholder="2" id="optionTimes"/>
             </div><!-- /form-group -->
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
     <div class="row">
         <div class="col-md-6">
-            <span>עללית שכד באופציה</span>
+            <span>עליית שכד באופציה</span>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="5" />
+                        <input type="text" class="form-control" placeholder="5" id="optionRise"/>
                     </div><!-- /form-group -->
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
@@ -212,13 +277,13 @@
         <div class="col-md-6">
             <div class="radio">
                 <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
                     ש"ח
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>
                     אחוז
                 </label>
             </div>
@@ -230,7 +295,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="3" />
+                <input type="text" class="form-control" placeholder="3" id="madad"/>
             </div><!-- /form-group -->
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
@@ -255,45 +320,13 @@
             <th>עלות בשנה</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>
-                שנה 1
-            </td>
-            <td>
-                5000
-            </td>
-            <td>
-                60000
-            </td>
-        </tr>
-        <tr>
-            <td>
-                שנה 1
-            </td>
-            <td>
-                5000
-            </td>
-            <td>
-                60000
-            </td>
-        </tr>
-        <tr>
-            <td>
-                שנה 1
-            </td>
-            <td>
-                5000
-            </td>
-            <td>
-                60000
-            </td>
-        </tr>
+        <tbody id="table">
+		
         </tbody>
-
     </table>
 </div>
 </div>
 </div>
+<script src="6th.js"></script>
 </body>
 </html>
