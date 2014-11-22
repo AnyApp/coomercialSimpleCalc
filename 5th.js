@@ -27,7 +27,7 @@
             if(i >= len){
                 newPrice = newPrice * Math.pow(1 + optionRise/100, 1 + Math.floor((i - len) / optLen));
             }
-            newPrice = newPrice * Math.pow(1 + madad/100, counter + 1);
+            newPrice = newPrice * Math.pow(1 + madad/100, counter);
             console.log(1 + madad/100);
             var newRow = [
                 '<tr><td>שנה',
