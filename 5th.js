@@ -46,3 +46,10 @@
     listening.keyup(calculateEverything);
     listening.keydown(calculateEverything);
 })();
+function toggleHide(id){
+    var hide = $('#hide'+id);
+    if(hide.css('display') === 'none')
+        hide.css('display','');
+    else
+        hide.css('display','none');
+}
