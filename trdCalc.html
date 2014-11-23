@@ -18,12 +18,10 @@
         .bitMargin {
             margin: 20px 0;
         }
-        input[type='text']{
-            width: 100%;
-        }
 		h2{
 			padding:0;
 			margin:0;
+            font-size: 20px;
 		}
     </style>
 </head>
@@ -36,20 +34,26 @@
             <div class="row bitMargin">
                 <div class="col-md-5">income</div>
                 <div class="col-md-5">
-                    <input type="text" id="result1">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="result1"/>
+                    </div>
                 </div>
             </div>
             <div class="row bitMargin">
                 <div class="col-md-5">outcome</div>
                 <div class="col-md-5 ">
-                    <input type="text" id="result2">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="result2"/>
+                    </div>
                 </div>
             </div>
             <hr />
             <div class="row bitMargin">
                 <div class="col-md-5">NOI</div>
                 <div class="col-md-5 ">
-                    <input type="text" readonly id="resultsGap">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="resultsGap" readonly />
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,23 +71,29 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <span>income name:</span>
-                                <input type="text" style="width: 100%">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" />
+                                </div>
                             </div>
                         </div>
                         <div class="row bitMargin">
                             <div class="col-md-5">
                                 <span>amount:</span>
-                                <input type="text" style="width: 100%">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" />
+                                </div>
                             </div>
                             <div class="col-md-5 ">
                                 <span>price:</span>
-                                <input type="text" style="width: 100%">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" />
+                                </div>
                             </div>
                         </div>
                         <hr />
                         <div class="row bitMargin">
                             <div class="col-md-12">
-                                <input type="radio" name="kind" /> Monthly
+                                <input type="radio" name="kind" checked /> Monthly
                                 <input type="radio" name="kind" /> Yearly
                             </div>
                         </div>
@@ -92,7 +102,9 @@
                                 <span style="padding: 0;margin: 0;">Total:</span>
                             </div>
                             <div class="col-md-6">
-                                <input class="totals">
+                                <div class="form-group">
+                                    <input type="text" class="form-control totals" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -109,7 +121,9 @@
                 <div class="col-md-12">
                     <h2>Total income</h2>
                     <hr />
-                    <input style="width: 100%;" class="totalTotals">
+                    <div class="form-group">
+                        <input type="text" class="form-control totalTotals" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,23 +144,29 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <span>outcome name:</span>
-                                    <input type="text" style="width: 100%">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" />
+                                    </div>
                                 </div>
                             </div>
                             <div class="row bitMargin">
                                 <div class="col-md-5">
                                     <span>amount:</span>
-                                    <input type="text" style="width: 100%">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" />
+                                    </div>
                                 </div>
                                 <div class="col-md-5 ">
                                     <span>price:</span>
-                                    <input type="text" style="width: 100%">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" />
+                                    </div>
                                 </div>
                             </div>
                             <hr />
                             <div class="row bitMargin">
                                 <div class="col-md-12">
-                                    <input type="radio" name="kind" /> Monthly
+                                    <input type="radio" name="kind" checked /> Monthly
                                     <input type="radio" name="kind" /> Yearly
                                 </div>
                             </div>
@@ -155,7 +175,9 @@
                                     <span style="padding: 0;margin: 0;">Total:</span>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="totals">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control totals" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +194,9 @@
                 <div class="col-md-12">
                     <h2>Total outcome</h2>
                     <hr />
-                    <input style="width: 100%;" class="totalTotals">
+                    <div class="form-group">
+                        <input type="text" class="form-control totalTotals" />
+                    </div>
                 </div>
             </div>
         </div>
