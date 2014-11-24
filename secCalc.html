@@ -92,25 +92,50 @@
 <script src="jquery.js">
 </script>
 <script>
+var data;
+$(function(){
+    $.get('http://codletech.net/commercial/API/getCpi.php',function(d){
+        data=d;
+        data = JSON.parse(data);
+    });
+});
+function log(a){
+    console.log(a);
+    return a;
+}
 function findCpiValue(data,date){
 	for(var i in data){
-			if(Number(data[i].cpi_year) === date.getFullYear() && Number(data[i].cpi_month) === date.getMonth()){
-				return Number(data[i].cpi_value.split(',').join(''));
-			}
-		}
+        if(date.getDate() >= 15){
+            if(Number(data[i].cpi_year) === date.getFullYear() && Number(data[i].cpi_month) === date.getMonth()+1){
+                return Number(data[i-1].cpi_value.split(',').join(''));
+            }
+        }
+        else{
+            if(Number(data[i].cpi_year) === date.getFullYear() && Number(data[i].cpi_month) === date.getMonth()+1){
+                return Number(data[i-2].cpi_value.split(',').join(''));
+            }
+        }
+    }
 	return Number(data[data.length-1].cpi_value.split(',').join(''));
 }
 $('#calc').click(function(){
-	$.get('http://codletech.net/commercial/API/getCpi.php',function(data){
-		data = JSON.parse(data);
-		var date1 = new Date($('#d1').val());
-		var date2 = new Date($('#d2').val());
-		var amount = Number($('#amount').val());
-		var newAmount = amount * findCpiValue(data,date2) / findCpiValue(data,date1);
-		$('#original').val(amount);
-		$('#after').val(newAmount);
-		$('#percent').val((newAmount-amount)/amount * 100);
-	});
+    function update(){
+        var date1 = new Date($('#d1').val());
+        var date2 = new Date($('#d2').val());
+        var amount = Number($('#amount').val());
+        var newAmount = amount * findCpiValue(data,date2) / findCpiValue(data,date1);
+        $('#original').val(amount);
+        $('#after').val(newAmount);
+        $('#percent').val((newAmount-amount)/amount * 100);
+    }
+    if(!data)
+    	$.get('http://codletech.net/commercial/API/getCpi.php',function(d){
+            data=d;
+            data = JSON.parse(data);
+    		update();
+    	});
+    else
+        update();
 });
 </script>
 </body>

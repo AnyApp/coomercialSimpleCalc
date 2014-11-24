@@ -12,7 +12,6 @@
                 totalMonthly += value;
             sum[i].value = value;
         }
-        totalMonthly += isNaN(Number($('.manage').val())) ? 0 : Number($('.manage').val());
         $('.totalMonthly').val(totalMonthly);
         var len = Number($('#len').val()), optLen = Number($('#optionLen').val());
         var optionTimes = Number($('#optionTimes').val()), optionRise = Number($('#optionRise').val());
@@ -42,7 +41,7 @@
             table.append(newRow);
         }
     }
-    var listening = $('.mr, .sh, .manage, #madad, #optionTimes, #optionLen, #len, #optionRise')
+    var listening = $('.mr, .sh, #madad, #optionTimes, #optionLen, #len, #optionRise')
     listening.keyup(calculateEverything);
     listening.keydown(calculateEverything);
 })();
