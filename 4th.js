@@ -12,11 +12,11 @@ function getCheckedRadioId(name) {
         if (elements[i].checked) return elements[i].value;
 }
 function calcPrice(){
-	var price = Number($('#noi').val()) / (Number($('#yield').val()) * 0.01);
-	$('#price').val(isNaN(price) ? '' : price);
+	var price = Number(unfrmt($('#noi').val())) / (Number(unfrmt($('#yield').val()) * 0.01));
+	$('#price').val(isNaN(price) ? '' : frmt(price));
 }
 function calcYield(){
-	var yield = Number($('#noi').val()) / (Number($('#price').val()) * 0.01);
+	var yield = Number(unfrmt($('#noi').val())) / (Number(unfrmt($('#price').val()) * 0.01));
 	$('#yield').val(isNaN(yield) ? '' : yield);
 }
 var radio2 = true;

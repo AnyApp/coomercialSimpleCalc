@@ -92,6 +92,13 @@
 <script src="jquery.js">
 </script>
 <script>
+function frmt(x) {
+    if(!isNaN(x)){
+        x=Number(x);
+        x=Math.floor(x);
+    }
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 var data;
 $(function(){
     $.get('http://codletech.net/commercial/API/getCpi.php',function(d){
@@ -124,9 +131,9 @@ $('#calc').click(function(){
         var date2 = new Date($('#d2').val());
         var amount = Number($('#amount').val());
         var newAmount = amount * findCpiValue(data,date2) / findCpiValue(data,date1);
-        $('#original').val(amount);
-        $('#after').val(newAmount);
-        $('#percent').val((newAmount-amount)/amount * 100);
+        $('#original').val(frmt(amount));
+        $('#after').val(frmt(newAmount));
+        $('#percent').val(frmt((newAmount-amount)/amount * 100));
     }
     if(!data)
     	$.get('http://codletech.net/commercial/API/getCpi.php',function(d){

@@ -22,6 +22,27 @@
         }
     </style>
     <script>
+function frmt(x) {
+    if(!isNaN(x)){
+        x=Number(x);
+        x=Math.floor(x);
+    }
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function unfrmt(x){
+    if(!isNaN(x))
+    return x;
+    try{
+        return x.split(',').join('');
+    }
+    catch(e){
+        return 0;
+    }
+}
+function log(x){
+    console.log(x);
+    return x;
+}
 		var selected = 0;
         var months = ["0.1", "0.25", "0.5", "1"];
         $(function(){
@@ -34,43 +55,43 @@
 				selected = ui.value;
                 // $("#slider10output").text(  months[ui.value] );
                 if(radio2){
-    				var yield = Number($('#yield').val());
-    				var noi = Number($('#noi').val());
+    				var yield = Number(unfrmt($('#yield').val()))
+    				var noi = Number(unfrmt($('#noi').val()))
     				if (isNaN(yield) || isNaN(noi))
     					return; //add an error message if one of the arguments are not numbers.
     				var sensitivity = Number(months[ui.value]);
     				var percentages = $('.sensitivity');
     				var percentagesArray = [];
-    				for(var i in percentages){
+    				for(var i = 0; i< percentages.length; i++){
     					percentagesArray.push(yield - sensitivity * (3 - i));
     					percentages[i].innerHTML = percentagesArray[i] + '%';
     				}
     				var prices = $('.resPrice');
-    				for(var i in prices){
-    					prices[i].innerHTML = noi / (percentagesArray[i] * 0.01);
+    				for(var i = 0; i< prices.length; i++){
+    					prices[i].innerHTML = frmt(noi / (percentagesArray[i] * 0.01));
     				}
-    				$('#miniNoi').html(noi);
+    				$('#miniNoi').html(frmt(noi));
     				$('#miniYield').html(yield);
-    				$('#miniPrice').html(noi / (percentagesArray[3] * 0.01));
+    				$('#miniPrice').html(frmt(noi / (percentagesArray[3] * 0.01)));
                 }
                 else{
-                    var price = Number($('#price').val());
-                    var noi = Number($('#noi').val());
+                    var price = Number(unfrmt($('#price').val()))
+                    var noi = Number(unfrmt($('#noi').val()))
                     if (isNaN(price) || isNaN(noi))
                         return; //add an error message if one of the arguments are not numbers.
                     var sensitivity = Number(months[ui.value].split(',').join(''));
                     var percentages = $('.sensitivity');
                     var percentagesArray = [];
-                    for(var i in percentages){
+                    for(var i = 0; i< percentages.length; i++){
                         percentagesArray.push(price - sensitivity * (3 - i));
-                        percentages[i].innerHTML = percentagesArray[i];
+                        percentages[i].innerHTML = frmt(percentagesArray[i]);
                     }
                     var prices = $('.resPrice');
-                    for(var i in prices){
-                        prices[i].innerHTML = noi / (percentagesArray[i] * 0.01);
+                    for(var i = 0; i< prices.length; i++){
+                        prices[i].innerHTML = frmt(noi / (percentagesArray[i] * 0.01));
                     }
-                    $('#miniNoi').html(noi);
-                    $('#miniYield').html(noi / (percentagesArray[3] * 0.01));
+                    $('#miniNoi').html(frmt(noi));
+                    $('#miniYield').html(frmt(noi / (percentagesArray[3] * 0.01)));
                     $('#miniPrice').html(price);
                 }
             });

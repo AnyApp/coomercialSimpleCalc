@@ -1,3 +1,20 @@
+function frmt(x) {
+    if(!isNaN(x)){
+        x=Number(x);
+        x=Math.floor(x);
+    }
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function unfrmt(x){
+    if(!isNaN(x))
+        return x;
+        try{
+            return x.split(',').join('');
+        }
+        catch(e){
+            return 0;
+        }
+    }
 (function() {
     function calculateEverything() {
         var mr = $('.mr');
@@ -12,7 +29,7 @@
                 totalMonthly += value;
             sum[i].value = value;
         }
-        $('.totalMonthly').val(totalMonthly);
+        $('.totalMonthly').val(frmt(totalMonthly));
         var len = Number($('#len').val()), optLen = Number($('#optionLen').val());
         var optionTimes = Number($('#optionTimes').val()), optionRise = Number($('#optionRise').val());
         var madad = Number($('#madad').val());
@@ -27,15 +44,14 @@
                 newPrice = newPrice * Math.pow(1 + optionRise/100, 1 + Math.floor((i - len) / optLen));
             }
             newPrice = newPrice * Math.pow(1 + madad/100, counter);
-            console.log(1 + madad/100);
             var newRow = [
                 '<tr><td>שנה',
                 ' ',
                 counter + 1,
                 '</td><td>',
-                newPrice,
+                frmt(newPrice),
                 '</td><td>',
-                newPrice * 12,
+                frmt(newPrice * 12),
                 '</td></tr>'
             ].join('');
             table.append(newRow);

@@ -1,10 +1,31 @@
+function log(x){
+	console.log(x);
+	return x;
+}
+function frmt(x) {
+	if(!isNaN(x)){
+		x=Number(x);
+		x=Math.floor(x);
+	}
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function unfrmt(x){
+	if(!isNaN(x))
+		return x;
+	try{
+		return x.split(',').join('');
+	}
+	catch(e){
+		return 0;
+	}
+}
 (function(){
 	var incomes = $('.incomes');
 	var outcomes = $('.outcomes');
 	function renderTotals(incomes){
-		var totalsArray = _.map(incomes.find('.totals'),function(one){return Number(one.value);});
+		var totalsArray = _.map(incomes.find('.totals'),function(one){return Number(unfrmt(one.value));});
 		var sum = _.reduce(totalsArray,function(sum,one){return sum+one;},0);
-		incomes.find('.totalTotals').val(sum);
+		incomes.find('.totalTotals').val(frmt(sum));
 		return sum;
 	}
 	function createHandlers(newIncome){
@@ -16,12 +37,12 @@
 			var price = inputs[2].value;
 			var yearly = inputs[4].checked;
 			var total = Number(amount) * Number(price) * (yearly ? 1 : 12);
-			inputs[5].value = isNaN(total) ? '' : total;
+			inputs[5].value = isNaN(total) ? '' : frmt(total);
 			var sumIncomes = renderTotals(incomes);
 			var sumOutcomes = renderTotals(outcomes);
-			$('#result1').val(sumIncomes);
-			$('#result2').val(sumOutcomes);
-			$('#resultsGap').val(sumIncomes-sumOutcomes);
+			$('#result1').val(frmt(sumIncomes));
+			$('#result2').val(frmt(sumOutcomes));
+			$('#resultsGap').val(frmt(sumIncomes-sumOutcomes));
 		}
 		newIncome.keyup(typeHandler);
 		newIncome.keydown(typeHandler);

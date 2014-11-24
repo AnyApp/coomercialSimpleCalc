@@ -1,3 +1,20 @@
+function frmt(x) {
+    if(!isNaN(x)){
+        x=Number(x);
+        x=Math.floor(x);
+    }
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function unfrmt(x){
+    if(!isNaN(x))
+        return x;
+        try{
+            return x.split(',').join('');
+        }
+        catch(e){
+            return 0;
+        }
+    }
 (function() {
     function calculateEverything() {
         var mr = $('.mr');
@@ -5,7 +22,7 @@
         var sum = $('.sum');
         var totalMonthly = 0;
         if(!isNaN(Number(mr[0].value) + Number(mr[1].value) + Number(mr[2].value)))
-            $('.sumMr').val(Number(mr[0].value) + Number(mr[1].value) + Number(mr[2].value));
+            $('.sumMr').val(frmt(Number(mr[0].value) + Number(mr[1].value) + Number(mr[2].value)));
         else
             $('.sumMr').val('');
         for (var i in mr) {
@@ -17,10 +34,10 @@
             sum[i].value = value;
         }
         if(!isNaN(Number(sum[0].value) + Number(sum[1].value) + Number(sum[2].value)))
-            $('.sumSum').val(Number(sum[0].value) + Number(sum[1].value) + Number(sum[2].value));
+            $('.sumSum').val(frmt(Number(sum[0].value) + Number(sum[1].value) + Number(sum[2].value)));
         else
             $('.sumSum').val('');
-        $('.totalMonthly').val(totalMonthly);
+        $('.totalMonthly').val(frmt(totalMonthly));
         var len = Number($('#len').val()), optLen = Number($('#optionLen').val());
         var optionTimes = Number($('#optionTimes').val()), optionRise = Number($('#optionRise').val());
         var madad = Number($('#madad').val());
@@ -40,9 +57,9 @@
                 ' ',
                 counter + 1,
                 '</td><td>',
-                newPrice,
+                frmt(newPrice),
                 '</td><td>',
-                newPrice * 12,
+                frmt(newPrice * 12),
                 '</td></tr>'
             ].join('');
             table.append(newRow);
